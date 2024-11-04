@@ -3,7 +3,7 @@ import Recipe from "../Recipe/Recipe";
 import WantToCookCurrentlyCook from "../WantToCookCurrentlyCook/WantToCookCurrentlyCook";
 import PropTypes from 'prop-types'
 
-const Recipes = ({handleWantToCook, cookItems, preparingItems, currentlyCookItems}) => {
+const Recipes = ({handleWantToCook, cookItems, preparingItems, currentlyCookItems, totalTime, totalCalories}) => {
     const [recipes, setRecipes] = useState([])
 
     useEffect(() => {
@@ -34,6 +34,8 @@ const Recipes = ({handleWantToCook, cookItems, preparingItems, currentlyCookItem
                         cookItems={cookItems}
                         preparingItems={preparingItems}
                         currentlyCookItems={currentlyCookItems}
+                        totalTime={totalTime}
+                        totalCalories={totalCalories}
                     ></WantToCookCurrentlyCook>
                 </div>
             </div>
@@ -45,7 +47,9 @@ Recipes.propTypes={
     handleWantToCook: PropTypes.func.isRequired,
     cookItems: PropTypes.array.isRequired,
     preparingItems: PropTypes.func,
-    currentlyCookItems: PropTypes.array
+    currentlyCookItems: PropTypes.array,
+    totalTime: PropTypes.number,
+    totalCalories: PropTypes.number
 }
 
 export default Recipes;

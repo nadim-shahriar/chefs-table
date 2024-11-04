@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const CurrentlyCookItem = ({currentlyCookItem}) => {
     console.log(currentlyCookItem)
     const { recipe_id, recipe_name, preparing_time, calories } = currentlyCookItem
@@ -8,11 +10,14 @@ const CurrentlyCookItem = ({currentlyCookItem}) => {
                 <td className="py-7 px-5">{recipe_name}</td>
                 <td className="py-7 pr-5">{preparing_time} Minutes</td>
                 <td className="py-7 pr-10 ">{calories} Calories</td>
-                
             </tr>
         </tbody>
 
     );
 };
+
+CurrentlyCookItem.propTypes ={
+    currentlyCookItem: PropTypes.object
+}
 
 export default CurrentlyCookItem;

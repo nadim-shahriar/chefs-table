@@ -15,7 +15,7 @@ const Navbar = () => {
             <div className="flex items-center gap-6">
                 <div className="bg-gray-200 flex items-center rounded-[30px] gap-2 px-6 py-3">
                     <CiSearch />
-                    <input className="bg-gray-200" placeholder="Search" type="text" name="" id="" />
+                    <input className="bg-gray-200 hover:bg-white" placeholder="Search" type="text" name="" id="" />
                 </div>
                 <button className="bg-[#0BE58A] p-3 rounded-full">
                     <VscAccount />

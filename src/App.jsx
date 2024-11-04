@@ -12,6 +12,9 @@ function App() {
   }
 
   const [currentlyCookItems, setCurrentlyCookItems] = useState([])
+  const [totalTime, setTotalTime] = useState(0)
+  const [totalCalories, setTotalCalories] = useState(0)
+
   const preparingItems = (cookItem) => {
     const { preparing_time, calories, recipe_id } = cookItem
     console.log(preparing_time, calories, recipe_id)
@@ -21,6 +24,12 @@ function App() {
 
     const newCurrentlyCookItems = [...currentlyCookItems, cookItem]
     setCurrentlyCookItems(newCurrentlyCookItems)
+
+    const newTotalTime = totalTime + preparing_time;
+    setTotalTime(newTotalTime)
+
+    const newTotalCalories = totalCalories + calories;
+    setTotalCalories(newTotalCalories)
   }
 
 
@@ -33,6 +42,8 @@ function App() {
         cookItems={cookItems}
         preparingItems={preparingItems}
         currentlyCookItems={currentlyCookItems}
+        totalTime={totalTime}
+        totalCalories={totalCalories}
       ></Recipes>
 
     </div>
